@@ -7,7 +7,9 @@ public class Test {
 		
 		int[] cputime = {2,3,4,0};
 		int[] iotime = {3,4,0,0};
-		Process p1 = new Process(256, cputime, iotime);
+		int mem = 256;
+		Process p1 = new Process("poop", mem, cputime, iotime);
+		Process p2 = new Process("poop", 100, cputime, iotime);
 		
 		int i = 0;
 		while(i<4){
@@ -15,7 +17,13 @@ public class Test {
 			i++;
 		}
 		
+		
+		int synch = 0;
+		
+		p1.Wait();
+		p1.Signal();
+		
+		
 
 	}
-
 }

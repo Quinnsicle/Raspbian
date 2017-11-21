@@ -44,14 +44,14 @@ public class Output extends Thread{
 		usedSpace = updated;
 	}
 	
-	public String Loaded() {
-		String[] array = new String[10];
+	public String processListToString(Process[] list) {
+		String[] array = new String[list.length];
 		int i = 0;
-		for(Process p : loaded) {
-			array[i] = String.valueOf(p.name);
+		for(Process p : list) {
+			array[i] = p.name;
 			i++;
 		}
-		return array.toString();
+		return Arrays.toString(array);
 	}
 	
 	public void run() {
@@ -70,7 +70,7 @@ public class Output extends Thread{
 			System.out.println("I/O Waiting Queue: " + ioQ[0]);
 			
 			//mem
-			System.out.println("Loaded: " + Loaded());
+			System.out.println("Loaded: " + processListToString(loaded));
 			avalSpace = totalSpace - usedSpace;
 			System.out.println("Used Space: " + usedSpace);
 			System.out.println("Available Space: " + avalSpace);

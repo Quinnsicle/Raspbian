@@ -13,15 +13,11 @@ public class Process extends Thread{
 	
 	// Semaphore
 	Semaphore sem;
-	
-	// Critical sections are negative values in the burst time arrays
-	//int[] cpuBurstTime, int[] ioBurstTime
+
 	
 	public Process(String name, int mem, double[] bursttimes, Semaphore sem) {
 		this.name = name;
 		this.reqMem = mem;
-		//this.cpuBurst = cpuBurstTime;
-		//this.ioBurst = ioBurstTime;
 		this.btimes = bursttimes;
 	}
 	

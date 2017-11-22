@@ -3,7 +3,13 @@ package os;
 import java.util.*;
 import java.util.concurrent.Semaphore;
 
-
+// to do
+//process termination
+//memory 1. removing terminated processes from loaded
+//		 2. only loading processes that fill aval space
+// cpu scheduling 1. ready Queue
+//				  2. IO queue
+// semaphore	1. waiting queue for d
 
 public class Output extends Thread{
 	//--------------------------------------------------
@@ -87,10 +93,10 @@ public class Output extends Thread{
 		pList.add(p1);
 		pList.add(p2);
 		pList.add(p3);
-		cpuMSG = p1.name;
+		cpuMSG = p1.name + " running";
 		int j = pList.size();
 		
-		for(int i=0; i < j; i++) { // Need to change
+		for(int i=0; i < j; i++) { 
 			currentP = pList.get(i);
 			currentP.run();
 			
@@ -99,7 +105,7 @@ public class Output extends Thread{
 			time = currentP.time + time;
 			
 			//cpu usage
-			System.out.println("CPU Usage: " + cpuMSG + " Running");
+			System.out.println("CPU Usage: " + cpuMSG);
 			System.out.println("	Ready Queue: " + processListToString(readyQ));
 			System.out.println("	I/O Waiting Queue: " + processListToString(ioQ));
 			
@@ -111,7 +117,7 @@ public class Output extends Thread{
 			System.out.println("	Available Space: " + avalSpace);
 			System.out.println();
 			
-			cpuMSG = currentP.name;
+			cpuMSG = currentP.name + "running";
 			
 		}
 		

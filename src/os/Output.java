@@ -3,7 +3,6 @@ package os;
 import java.util.*;
 import java.util.concurrent.Semaphore;
 
-import model.Guard;
 
 
 public class Output extends Thread{
@@ -80,6 +79,7 @@ public class Output extends Thread{
 		pList.add(p2);
 	}
 	
+	
 	//--------------------------------------------------
 	// THREAD
 	//--------------------------------------------------
@@ -89,6 +89,7 @@ public class Output extends Thread{
 		pList.add(p3);
 		cpuMSG = p1.name;
 		int j = pList.size();
+		
 		for(int i=0; i < j; i++) { // Need to change
 			currentP = pList.get(i);
 			currentP.run();

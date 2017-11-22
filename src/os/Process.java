@@ -27,15 +27,15 @@ public class Process extends Thread{
 	
 	public void run() {
 		if(btimes[i] >= 1) { 
-		// CPU Burst Time
+		// CPU Burst Time (positive integers)
 			time = time + (int) btimes[i];
 			
 		}else if(btimes[i] > 0) { 
-		// IO Burst Times
+		// IO Burst Times (positive decimals)
 			time = time + (int)(btimes[i] * 100);
 			
 		}else if(btimes[i] < 0) { 
-		// Critical Section
+		// Critical Section (negative integers)
 			time = time + (int)Math.abs(btimes[i]);
 			
 		}else {
